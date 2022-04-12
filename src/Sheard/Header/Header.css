@@ -1,14 +1,20 @@
 #responsive-navbar-nav .h_btn{
     border: none;
-    background-color: rgb(255, 183, 0);
+    background: rgb(250, 208, 137);
     padding: 5px 15px;
     border-radius: 20px;
     color: rgb(23, 23, 23);
     font-weight: bold;
+    box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.511), 2px 2px 4px rgba(118, 118, 118, 0.475);
+    transition: all 0.5s;
+}
+#responsive-navbar-nav a:hover{
+    color:rgb(225, 150, 0);
     transition: 0.5s;
 }
 #responsive-navbar-nav .h_btn:hover{
-    background-color: rgb(216, 156, 3);
+    background-color: #ffc107;
     color: rgb(255, 255, 255);
-    box-shadow: inset -3px -3px 5px rgb(255, 255, 255), inset 3px 3px 5px rgb(255, 255, 255);
+    text-decoration: none;
+    box-shadow: inset -2px -2px 5px rgba(151, 151, 151, 0.575), inset 3px 3px 5px rgba(118, 118, 118, 0.475);
 }
