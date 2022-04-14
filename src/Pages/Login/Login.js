@@ -1,9 +1,10 @@
 import { Button } from "bootstrap";
 import React, { useRef } from "react";
 import { Form } from "react-bootstrap";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import SocialSingUp from "../../Sheard/SocialSingUp/SocialSingUp";
 import "./Login.css";
 
 const Login = () => {
@@ -12,12 +13,23 @@ const Login = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || '/'
 
+  // Sing In with email and password
   const [
     signInWithEmailAndPassword,
     user,
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
+
+  // Reset Password
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+  const resetPassword = async() => {
+      const email = emailRef.current.value;
+      await sendPasswordResetEmail(email);
+      alert('Sent email');
+  }
+
 
   const handleSubmitButtonLogIn  = event =>{
     event.preventDefault()
@@ -35,6 +47,10 @@ const Login = () => {
   if(user){
     navigat(from, {replace: true});
   }
+  let errorElement;
+  if(error){
+    errorElement = <p className="text-danger my-3">{error.message}</p>
+  }
 
   return (
     <div className="login_area">
@@ -49,9 +65,14 @@ const Login = () => {
             <Form.Label>Password</Form.Label>
             <Form.Control ref={passwordRef} type="password" placeholder="Password" required/>
           </Form.Group>
-          <Form.Control onClick={handleSubmitButtonLogIn} type="submit" value="submit" />
+          <Form.Control onClick={handleSubmitButtonLogIn} type="submit" value="Log In" />
         </Form>
-        <p className='pt-3'>If don't have account? <span onClick={navigatSingUp} className="text-warning text-decoration-underline singup_link">Please SingUp</span></p>
+        {
+          errorElement
+        }
+        <p className='pt-3 mb-1'>If don't have account? <span onClick={navigatSingUp} className="text-primary text-decoration-underline singup_link">Please SingUp</span></p>
+        <p className='pt-0'>If forget Password <span onClick={resetPassword} className="text-primary text-decoration-underline singup_link">Reset Password</span></p>
+          <SocialSingUp></SocialSingUp>
       </div>
     </div>
   );
