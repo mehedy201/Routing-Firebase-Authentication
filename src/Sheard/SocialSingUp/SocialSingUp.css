@@ -1,0 +1,12 @@
+.social_icon_div .social_btn{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 200px;
+    background: none;
+    margin: 0.5rem 0;
+}
+.social_icon_div .social_icon{
+    height: 30px;
+    width: 30px;
+    padding: 4px;
+}

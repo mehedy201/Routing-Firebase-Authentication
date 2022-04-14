@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './Singup.css'
 import auth from '../../firebase.init';
+import SocialSingUp from '../../Sheard/SocialSingUp/SocialSingUp';
+
 
 const Singup = () => {
   const [
@@ -60,6 +62,12 @@ const Singup = () => {
           <Form.Control onClick={handleSubmitButtonSingUp} type="submit" value="submit" />
         </Form>
         <p className='mt-3'>All ready have an Account <span onClick={navigatLogin} className='text-warning text-decoration-underline singup_btn'>Please Log In</span></p>
+        <div className='d-flex justify-content-center align-items-center'>
+          <span className='or_line'></span>
+          <p className='m-0 px-2 fw-bold'>Or</p>
+          <span className='or_line'></span>
+        </div>
+        <SocialSingUp></SocialSingUp>
       </div>
     </div>
     );
