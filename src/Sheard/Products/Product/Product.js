@@ -9,9 +9,9 @@ const Product = ({product}) => {
             <img src={img} alt="" />
             <h3>{name}</h3>
             <p>Price: ${price}</p>
-                <div className='d-flex justify-content-between'>
+                <div className='d-flex justify-content-between align-items-center'>
                     <p>Ratting: {ratings}</p>
-                    <button>Buy Now</button>
+                    <p><button className='btn btn-sm btn-warning'>Buy Now</button></p>
                 </div>
         </div>
     );
