@@ -47,6 +47,7 @@ const Home = () => {
              </Carousel.Item>
             </Carousel>
             </div>
+            <h2 className='text-center mt-5'>Our Products</h2>
             <Products></Products>
         </div>
     );

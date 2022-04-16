@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Product from './Product/Product';
+import './Products.css'
 
 const Products = () => {
 
@@ -11,13 +13,15 @@ const Products = () => {
     }, [])
 
 
-
+console.log(products)
 
 
 
     return (
-        <div>
-            <p>product length {products.length}</p>
+        <div className='container mx-auto products_all'>
+            {
+                products.slice(0,3).map(product => <Product key={product.id} product={product}></Product>)
+            }
         </div>
     );
 };
