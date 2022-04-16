@@ -1,9 +1,9 @@
-import { Button } from "bootstrap";
 import React, { useRef } from "react";
 import { Form } from "react-bootstrap";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import Loading from "../../Sheard/Loading/Loading";
 import SocialSingUp from "../../Sheard/SocialSingUp/SocialSingUp";
 import "./Login.css";
 
@@ -20,6 +20,7 @@ const Login = () => {
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
+
 
   // Reset Password
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
@@ -50,6 +51,9 @@ const Login = () => {
   let errorElement;
   if(error){
     errorElement = <p className="text-danger my-3">{error.message}</p>
+  }
+  if(loading){
+    return <Loading></Loading>
   }
 
   return (
