@@ -3,10 +3,12 @@ import { Carousel } from 'react-bootstrap';
 import image1 from '../../images/slider0.png'
 import image2 from '../../images/slider1.png'
 import image3 from '../../images/slider2.png'
+import Products from '../../Sheard/Products/Products';
 
 const Home = () => {
     return (
         <div>
+            <div>
             <Carousel>
              <Carousel.Item>
                <img
@@ -44,6 +46,8 @@ const Home = () => {
                </Carousel.Caption>
              </Carousel.Item>
             </Carousel>
+            </div>
+            <Products></Products>
         </div>
     );
 };
