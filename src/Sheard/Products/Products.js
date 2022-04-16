@@ -28,7 +28,9 @@ const Products = () => {
                 products.slice(0,3).map(product => <Product key={product.id} product={product}></Product>)
             }
             </div>
-            <button style={{width: '250px', margin: '20px' }} onClick={seeAllButton} className='btn btn-warning' >See All</button>
+            <div className='d-flex justify-content-center my-4'>
+            <button style={{width: '250px'}} onClick={seeAllButton} className='btn btn-warning' >See All</button>
+            </div>
         </div>
     );
 };
