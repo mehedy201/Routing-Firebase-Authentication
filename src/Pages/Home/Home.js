@@ -4,6 +4,7 @@ import image1 from '../../images/slider0.png'
 import image2 from '../../images/slider1.png'
 import image3 from '../../images/slider2.png'
 import Products from '../../Sheard/Products/Products';
+import './Home.css'
 
 const Home = () => {
     return (

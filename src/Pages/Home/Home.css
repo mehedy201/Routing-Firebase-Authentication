@@ -1,0 +1,7 @@
+.carousel-caption{
+    background-color: rgba(35, 35, 35, 0.393);
+    position: absolute;
+    top: 40% !important;
+    bottom: auto !important;
+    border-radius: 10px;
+}
