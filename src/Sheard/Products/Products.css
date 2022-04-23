@@ -4,3 +4,13 @@
     gap: 2em;
     margin: 2em 0;
 }
+@media only screen and (max-width: 992px){
+    .products_all{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 768px){
+    .products_all{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

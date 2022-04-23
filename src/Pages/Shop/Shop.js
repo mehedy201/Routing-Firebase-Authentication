@@ -6,17 +6,16 @@ const Shop = () => {
     
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('products.json')
+        fetch('http://localhost:5000/product')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
-    console.log(products);
 
     return (
         <div>
             <div className='container shop_product mx-auto'>
             {
-                products.map(product => <Product key={product.id} product={product}></Product>)
+                products.map(product => <Product key={product._id} product={product}></Product>)
             }
             </div>
         </div>

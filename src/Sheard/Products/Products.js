@@ -8,7 +8,7 @@ const Products = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('products.json')
+        fetch('http://localhost:5000/product')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
@@ -25,7 +25,7 @@ const Products = () => {
         <div className='container'>
             <div className='products_all'>
             {
-                products.slice(0,3).map(product => <Product key={product.id} product={product}></Product>)
+                products.slice(0,3).map(product => <Product key={product._Fid} product={product}></Product>)
             }
             </div>
             <div className='d-flex justify-content-center my-4'>
